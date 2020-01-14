@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var text_view: UITextView!
     @IBAction func call(_ sender: Any) {
-        
+        //API Call by urlsession.
         guard let url = URL(string: "https://api.darksky.net/forecast/688555c90fac582a0fbc3be8e444802b/37.8267,-122.4233") else {
             return
         }
@@ -23,6 +23,7 @@ class ViewController: UIViewController {
                 
             }
             if let data = data {
+                //for showing JESON in text view by converting in string
                 self.text_view.text = String(bytes: data, encoding: .utf8)
                 print(data)
                 
